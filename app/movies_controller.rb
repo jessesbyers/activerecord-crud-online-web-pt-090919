@@ -5,7 +5,6 @@ def can_be_instantiated_and_then_saved
 end
 
 def can_be_created_with_a_hash_of_attributes
-  # Initialize movie and then and save it
   attributes = {
       title: "The Sting",
       release_date: 1973,
@@ -17,10 +16,6 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
-  # If no arguments are passed, use default values:
-  # title == "Home Alone"
-  # release_date == 1990
-
   Movie.create do |m|
     m.title = args[:title]
     m.release_date = args[:release_date]
@@ -43,6 +38,7 @@ def can_find_the_first_item_from_the_database_using_id
   Movie.find(1)
 end
 
+# not passing
 def can_find_by_multiple_attributes
   # Search Values:
   # title == "Title"
@@ -54,10 +50,7 @@ def can_find_by_multiple_attributes
 end
 
 def can_find_using_where_clause_and_be_sorted
-  # For this test return all movies released after 2002 and ordered by
-  # release date descending
   Movie.where("release_date > 2002").reverse_order
-  # Movie.order(release_date: :desc).where("release_date > 2002")
 end
 
 def can_be_found_updated_and_saved
