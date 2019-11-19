@@ -44,7 +44,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  movie = Movie.where(title: 'Title', release_date: 2000, director: 'Me')(1)
+  movie = Movie.where(title: 'Title', release_date: 2000, director: 'Me').order(1)
   # Movie.all.detect {|movie| movie.title == "title" && movie.release_date == 2000 && movie.director == "Me"}
 
 end
